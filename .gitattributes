@@ -1,0 +1,8 @@
+# Excel la file binary sinh ra tu CSV. Khi xung dot: bo ban nao cung duoc
+# roi chay `python3 tools/vocab_tool.py build-xlsx` de dung lai.
+*.xlsx binary
+
+# Nguon su that phai merge duoc theo tung dong.
+data/*.csv text eol=lf
+*.md text eol=lf
+*.py text eol=lf

@@ -1,0 +1,13 @@
+{
+  "_comment": "Cau hinh cho tools/vocab_tool.py. Duong dan tuong doi tinh tu goc repo.",
+  "data_dir": "data",
+  "excel_path": "data/vocabulary.xlsx",
+
+  "_todo_external_excel_path": "CHUA BIET duong dan file Excel tu vung cu. Khi tim ra, dien vao external_excel_path ben duoi (tool se ghi them mot ban ra do), va chay: python3 tools/vocab_tool.py import --path '<duong-dan>' --dry-run",
+  "external_excel_path": null,
+
+  "git": {
+    "remote": "origin",
+    "branch": "main"
+  }
+}
