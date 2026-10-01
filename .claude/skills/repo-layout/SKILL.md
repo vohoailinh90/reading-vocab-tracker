@@ -40,10 +40,11 @@ Rules, each one checked by `layout_check.py` unless marked *(judgement)*:
 
 1. **Tests live in `tests/`.** `test_*.py`, `*_test.py`, `conftest.py`, and
    anything named like a test (`run_tests_sample.py`), and JavaScript/TypeScript
-   tests (`x.test.mjs`, `test-x.js`, `x_test.js`, `test.js`, `app.spec.ts`) never
+   tests (`x.test.mjs`, `test-x.js`, `x_test.js`, `test.js`, `app.spec.ts`, `CalculatorSpec.js`) never
    sit in the root.
    Test helper directories go under `tests/` (`tests/support/`), never a root
-   `test_support/`.
+   `test_support/`. A root `spec/`/`specs/` that holds test code (`user_spec.rb`)
+   is a test directory too; a Spec Kit `specs/` of documents is not.
 2. **A root `.py` (or `.pyw`, any letter case) is an entry point** when it has a top-level
    `if __name__ == "__main__":`, or declares itself with the comment
    `# layout: entry-point` in its first 10 lines. A launcher without a main
