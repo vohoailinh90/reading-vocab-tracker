@@ -16,4 +16,9 @@ jobs:
           python-version: "3.11"
       - run: python -m pip install --upgrade pip
       - run: python -m pip install -r requirements-dev.txt
+      - name: Repository layout check
+        # Root holds only entry-point launchers; tests in tests/, modules in the
+        # package. See .claude/skills/repo-layout/SKILL.md.
+        run: python scripts/layout_check.py
+
       - run: python -m pytest tests/ -q

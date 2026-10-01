@@ -346,3 +346,20 @@ python3 -m pytest tests/ -q
 
 Sửa `tools/vocab_tool.py` thì phải cập nhật hoặc thêm test tương ứng trong
 `tests/test_vocab_tool.py`.
+
+## Repository layout
+
+The repository root holds only what a user needs to run the app: README and
+the agent instruction files, dependency files, and at most three entry-point
+launchers. Tests go in `tests/`, the app's modules in its package, developer
+tooling in `scripts/`. When a change adds a Python file, test or module, or
+restructures the repository, follow `.claude/skills/repo-layout/SKILL.md`.
+
+- `python3 scripts/layout_check.py` is the verdict: a test file or test
+  directory in the root, a root `.py` that has no
+  `if __name__ == "__main__":` guard and is not a Streamlit app (a library
+  module), or more than three root entry points fails it. Run it before
+  reporting done; reviewers run the script rather than judging the tree by eye.
+- Moving existing files is a restructure, not a typo fix: `git mv` to keep
+  history, fix every import and path, and prove the test suite still collects
+  the same number of tests from its new place.
